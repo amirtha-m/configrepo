@@ -1,0 +1,40 @@
+# DataSource Configuration
+spring.datasource.url=jdbc:postgresql://localhost:5432/notificationservice
+spring.datasource.username=postgres
+spring.datasource.password=root
+spring.datasource.driver-class-name=org.postgresql.Driver
+ 
+# JPA Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+ 
+# Kafka Configuration
+spring.kafka.bootstrap-servers=localhost:9092
+spring.kafka.topic=email-topic
+spring.kafka.consumer.group-id=notification-group
+spring.kafka.consumer.auto-offset-reset=earliest
+spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer=org.springframework.kafka.support.serializer.JsonSerializer
+ 
+# Mail Configuration
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=mathiamirtha96@gmail.com
+spring.mail.password=mmocevoycxrgpvur
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+ 
+# Server Configuration
+server.port=8083
+
+# Eureka Configuration
+spring.cloud.discovery.client.enabled=true
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+eureka.instance.lease-expiration-duration-in-seconds=30
+eureka.instance.lease-renewal-interval-in-seconds=15
+# Eureka Configuration
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+
+spring.application.name=notificationservice
